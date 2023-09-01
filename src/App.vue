@@ -1,47 +1,38 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import image1Url from '@/assets/artistas-confirmados-al-festival-bandera-1024x1024.webp'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <v-img :src="image1Url" class="bg-white" width="600" :aspect-ratio="1" />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style scoped lang="scss">
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('@/assets/FestivalBandera.jpg') !important;
+  height: 100%;
+  padding: 5%;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.bg-white {
+  border-radius: 5px;
+
+  :hover {
+    filter: brightness(0.5);
+    cursor: pointer;
+  }
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+h1 {
+  color: #e10165;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid 2px whitesmoke;
+  padding: 5px;
+  font-weight: 600;
 }
 </style>
